@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Website & IP Blocker</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<div class="background"></div>
+
+<div class="container">
+  <h1><i class="fa-solid fa-shield-halved"></i> Website & IP Blocker</h1>
+
+  <h2>Blocked Domains</h2>
+  <form method="POST">
+    <textarea name="domains">{{ domains|safe }}</textarea>
+
+    <h2>Blocked IPs</h2>
+    <textarea name="ips">{{ ips|safe }}</textarea>
+
+    <div class="button-group">
+      <button class="btn-update" name="action" value="update">🛠️ Update Config</button>
+      <button class="btn-block" name="action" value="block">🚫 Block</button>
+      <button class="btn-unblock" name="action" value="unblock">✅ Unblock</button>
+    </div>
+  </form>
+
+  {% if message %}
+    <p class="status">{{ message }}</p>
+  {% endif %}
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

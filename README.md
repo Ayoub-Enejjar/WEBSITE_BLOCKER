@@ -3,12 +3,6 @@ A simple Python script to block websites (domains) and direct IP addresses on Wi
 
 # 🔒 Website and IP Blocker (Windows Only)
 
-## ⚠️ Requirements
-
-- Windows OS
-- Run as Administrator
-- Python 3.x
-
 ## 🚀 How It Works
 
 - Blocks **websites/domains** via the `hosts` file (maps to `127.0.0.1`)
@@ -28,10 +22,18 @@ A simple Python script to block websites (domains) and direct IP addresses on Wi
 git clone https://github.com/yourusername/website-blocker.git
 cd website-blocker
 
-✅Run the script as Administrator: 
+⚠️ Requirements :
 
-📂To block:
-python block_sites.py block
+✅Windows OS
+✅Run as Administrator
+✅Python 3.x
 
-📂To unblock:
-python block_sites.py unblock
+📦 1. Create a virtual environment (optional but recommended)
+python -m venv venv
+source venv/bin/activate  # On Windows use: venv\Scripts\activate
+
+📦 2. Install dependencies
+pip install -r requirements.txt
+
+📦 3. Run the Flask app
+python app.py
